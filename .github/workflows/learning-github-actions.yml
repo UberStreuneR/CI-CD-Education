@@ -3,7 +3,7 @@ on:
   push:
     branches:
       master
-  fork
+  fork:
 env:
   DAY_OF_WEEK: Monday
 jobs:
