@@ -1,5 +1,7 @@
 name: learn-github-actions
 on: [push]
+env:
+  DAY_OF_WEEK: Monday
 jobs:
   env-variables:
     runs-on: ubuntu-latest
@@ -7,6 +9,16 @@ jobs:
       MY_NAME: Polt
     steps:
       - name: Echo the env variable
-        run: echo '$MY_NAME was just beaten by $GRANDMASTER'
+        run: echo "$MY_NAME was just beaten by $GRANDMASTER"
         env:
           GRANDMASTER: Eddy
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Say Hello Mona it's Monday"
+        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
