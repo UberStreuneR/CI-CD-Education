@@ -2,7 +2,7 @@ name: learn-github-actions
 on:
   push:
     branches:
-      main
+      dev
 env:
   DAY_OF_WEEK: Monday
 jobs:
