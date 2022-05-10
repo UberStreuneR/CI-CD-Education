@@ -5,7 +5,7 @@ on:
       master
   issue:
     types:
-      - created
+      - opened
 env:
   DAY_OF_WEEK: Monday
 jobs:
