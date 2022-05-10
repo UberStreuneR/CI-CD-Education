@@ -3,6 +3,9 @@ on:
   push:
     branches:
       master
+  issue:
+    types:
+      - created
 env:
   DAY_OF_WEEK: Monday
 jobs:
