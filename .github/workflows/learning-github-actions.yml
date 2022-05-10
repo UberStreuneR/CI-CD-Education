@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Echo the env variable
-        run: echo '${{ env.MY_NAME }} was just beaten by $GRANDMASTER'
+        run: echo '${{ env.MY_NAME }} was just beaten by ${{GRANDMASTER}}'
         env:
           GRANDMASTER: 'Eddy'
