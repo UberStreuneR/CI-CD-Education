@@ -1,17 +1,11 @@
 name: learn-github-actions
 on:
-  label:
-    types:
-      - created
   push:
-    branches:
-      - main
-  page_build:
-env:
-  DAY_OF_WEEK: Monday
+    paths:
+      - '**.js'
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        run: echo "Hello"
+        run: echo "JS file was run"
