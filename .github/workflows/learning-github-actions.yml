@@ -3,9 +3,7 @@ on:
   push:
     branches:
       master
-  issue:
-    types:
-      - opened
+  fork
 env:
   DAY_OF_WEEK: Monday
 jobs:
