@@ -1,9 +1,12 @@
 name: learn-github-actions
 on:
+  label:
+    types:
+      - created
   push:
     branches:
-      master
-  fork:
+      - main
+  page_build:
 env:
   DAY_OF_WEEK: Monday
 jobs:
