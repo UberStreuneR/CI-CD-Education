@@ -3,10 +3,11 @@ on: [push]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: 'Polt'
     steps:
       - uses: actions/checkout@v3
       - name: Set env variable
-        env:
-          MY_NAME: 'Polt'
+
       - name: Echo the env variable
-        run: echo '${{ MY_NAME }}'
+        run: echo '${{ env.MY_NAME }}'
