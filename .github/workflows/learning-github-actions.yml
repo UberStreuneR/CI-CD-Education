@@ -6,7 +6,6 @@ jobs:
     env:
       MY_NAME: Polt
     steps:
-      - uses: actions/checkout@v3
       - name: Echo the env variable
         run: echo '$MY_NAME was just beaten by $GRANDMASTER'
         env:
