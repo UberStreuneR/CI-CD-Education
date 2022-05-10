@@ -7,7 +7,5 @@ jobs:
       MY_NAME: 'Polt'
     steps:
       - uses: actions/checkout@v3
-      - name: Set env variable
-
       - name: Echo the env variable
         run: echo '${{ env.MY_NAME }}'
