@@ -9,4 +9,5 @@ jobs:
       GITHUB_CONTEXT: ${{ toJSON(github) }}
     steps:
       - run: echo "The push to dev branch has occured"
-      - run: echo $GITHUB_CONTEXT
+      - run: echo ${{ toJSON(github) }}
+      - run: echo ${{ toJSON(env) }}
