@@ -5,6 +5,8 @@ jobs:
   upload-job:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/dev'}}
+    env:
+      GITHUB_CONTEXT: ${{ toJSON(github) }}
     steps:
       - run: echo "The push to dev branch has occured"
-      - run: echo format('Github object -- {0}', ${{ github }})
+      - run: echo $GITHUB_CONTEXT
