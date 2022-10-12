@@ -7,7 +7,8 @@ jobs:
     if: ${{ github.ref == 'refs/heads/dev'}}
     env:
       GITHUB_CONTEXT: ${{ toJSON(github) }}
+      ENV_CONTEXT: ${{ toJSON(env) }}
     steps:
       - run: echo "The push to dev branch has occured"
-      - run: echo ${{ toJSON(github) }}
-      - run: echo ${{ toJSON(env) }}
+      - run: echo $GITHUB_CONTEXT
+      - run: echo $ENV_CONTEXT
