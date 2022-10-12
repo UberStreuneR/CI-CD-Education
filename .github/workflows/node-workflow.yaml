@@ -10,3 +10,5 @@ jobs:
         with:
           node-version: "16"
       - run: node test.js
+        env:
+          POSTGRES_URL: postgres://dummy-postgres-url
