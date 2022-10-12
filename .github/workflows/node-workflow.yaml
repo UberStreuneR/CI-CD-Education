@@ -1,0 +1,12 @@
+name: run-node-file
+run-name: ${{ github.actor }} runs JS file
+on: [push]
+jobs:
+  run-node-file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - run: node test.js
