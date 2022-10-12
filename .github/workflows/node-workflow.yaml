@@ -14,6 +14,7 @@ jobs:
           POSTGRES_URL: postgres://dummy-postgres-url
 
   example-job:
+    runs-on: ubuntu-latest
     name: Save output
     steps:
       - shell: bash
