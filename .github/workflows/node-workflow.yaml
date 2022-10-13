@@ -1,13 +1,13 @@
 name: run-node-file
-run-name: ${{ github.actor }} runs JS file
+run-name: ${{ github.actor }} studies context
 on: [push]
 jobs:
   dump_secrets_to_log:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
+      - name: Dump GitHub secrets
         id: github_secrets
-        run: echo '${{ secrets }}'
+        run: echo '${{ toJSON(secrets) }}'
 
   # dump_contexts_to_log:
   #   runs-on: ubuntu-latest
