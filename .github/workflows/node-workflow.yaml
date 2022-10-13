@@ -1,13 +1,18 @@
-name: run-node-file
-run-name: ${{ github.actor }} studies context
+name: test-run
+run-name: ${{ github.actor }} studies Github Actions
 on: [push]
 jobs:
-  dump_secrets_to_log:
+  local_test:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub secrets
-        id: github_secrets
-        run: echo '${{ toJSON(secrets) }}'
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+        working-directory: ./js
+      - run: |
+          npm install
+          npm test
 
   # dump_contexts_to_log:
   #   runs-on: ubuntu-latest
