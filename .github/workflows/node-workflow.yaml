@@ -4,29 +4,15 @@ on: [push]
 jobs:
   local_test:
     runs-on: ubuntu-latest
+    matrix:
+      node:
+        ["14", "16"]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node }}
         working-directory: ./js
       - run: |
           npm install
           npm test
-
-  # dump_contexts_to_log:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Dump GitHub context
-  #       id: github_context_step
-  #       run: echo '${{ toJSON(github) }}'
-  #     - name: Dump job context
-  #       run: echo '${{ toJSON(job) }}'
-  #     - name: Dump steps context
-  #       run: echo '${{ toJSON(steps) }}'
-  #     - name: Dump runner context
-  #       run: echo '${{ toJSON(runner) }}'
-  #     - name: Dump strategy context
-  #       run: echo '${{ toJSON(strategy) }}'
-  #     - name: Dump matrix context
-  #       run: echo '${{ toJSON(matrix) }}'
