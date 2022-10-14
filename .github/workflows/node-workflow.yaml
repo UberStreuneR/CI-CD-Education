@@ -4,9 +4,10 @@ on: [push]
 jobs:
   local_test:
     runs-on: ubuntu-latest
-    matrix:
-      node:
-        ["14", "16"]
+    strategy:
+      matrix:
+        node:
+          ["14", "16"]
     working-directory: /.js
     steps:
       - uses: actions/checkout@v3
