@@ -10,7 +10,7 @@ jobs:
           ["14", "16"]
     defaults:
       run:
-        working-directory: ./app
+        working-directory: ./js
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
